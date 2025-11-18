@@ -12,12 +12,14 @@ import {
   Volume2,
   Zap,
   Shield,
-  CheckCircle,
-  Calendar
+  CheckCircle
 } from "lucide-react";
-import heroImage from "@/assets/hero-mockup.jpg";
+import { useNavigate } from "react-router-dom";
+import heroImage from "@/assets/hero-abstract.jpg";
 
 const Index = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
@@ -44,33 +46,24 @@ const Index = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all">
+              <Button 
+                size="lg" 
+                onClick={() => navigate("/demo")}
+                className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all"
+              >
                 <Camera className="w-5 h-5 mr-2" />
                 Try SeeSense Demo
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-2 border-primary/30 hover:bg-primary/5 hover:border-primary">
-                How It Works
-              </Button>
             </div>
 
-            {/* Hero Image */}
+            {/* Hero Illustration */}
             <div className="pt-12 animate-slide-up">
               <div className="relative max-w-4xl mx-auto">
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
                 <img 
                   src={heroImage} 
-                  alt="SeeSense interface showing AI-powered scene description on a smartphone" 
-                  className="rounded-2xl shadow-2xl w-full border border-border"
+                  alt="Abstract illustration of AI-powered vision and accessibility technology" 
+                  className="rounded-2xl w-full"
                 />
-                {/* Floating feature badges */}
-                <div className="absolute -left-4 top-1/4 hidden lg:flex items-center gap-2 bg-card border border-border rounded-lg px-4 py-3 shadow-lg animate-fade-in">
-                  <FileText className="w-5 h-5 text-primary" />
-                  <span className="font-medium text-sm">Text Reader</span>
-                </div>
-                <div className="absolute -right-4 top-1/2 hidden lg:flex items-center gap-2 bg-card border border-border rounded-lg px-4 py-3 shadow-lg animate-fade-in">
-                  <ScanLine className="w-5 h-5 text-primary" />
-                  <span className="font-medium text-sm">Object ID</span>
-                </div>
               </div>
             </div>
           </div>
@@ -143,33 +136,6 @@ const Index = () => {
               </Card>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Demo Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Try the <span className="text-primary">SeeSense Experience</span>
-          </h2>
-          <p className="text-xl text-muted-foreground mb-12">
-            Point your camera. Tap. Hear everything.
-          </p>
-          
-          <div className="max-w-4xl mx-auto rounded-2xl bg-card border-2 border-primary/20 p-4 shadow-2xl">
-            <div className="aspect-video bg-muted rounded-xl flex items-center justify-center">
-              <div className="text-center space-y-4">
-                <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mx-auto">
-                  <Camera className="w-10 h-10 text-primary" />
-                </div>
-                <p className="text-lg text-muted-foreground">Video Demo Placeholder</p>
-              </div>
-            </div>
-          </div>
-          
-          <Button size="lg" className="mt-8 text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground">
-            Watch 30-Second Demo
-          </Button>
         </div>
       </section>
 
@@ -282,32 +248,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Roadmap */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16">
-            What's <span className="text-primary">Coming Next</span>
-          </h2>
-          
-          <div className="max-w-3xl mx-auto space-y-4">
-            {[
-              "Real-time scene streaming",
-              "Smart navigation assistance",
-              "Context-aware alerts",
-              "Offline mode",
-              "Face recognition (with consent)",
-            ].map((feature, i) => (
-              <Card key={i} className="bg-card border-border hover:border-primary/50 transition-colors">
-                <CardContent className="p-6 flex items-center space-x-4">
-                  <Calendar className="w-8 h-8 text-primary flex-shrink-0" />
-                  <p className="text-lg">{feature}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Final CTA */}
       <section className="py-20 bg-gradient-to-b from-muted/30 to-background">
         <div className="container mx-auto px-6 text-center">
@@ -319,12 +259,14 @@ const Index = () => {
             Join thousands making the digital world more accessible for everyone.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground shadow-[0_0_30px_hsl(180,70%,50%,0.3)]">
+          <div className="flex justify-center">
+            <Button 
+              size="lg" 
+              onClick={() => navigate("/demo")}
+              className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all"
+            >
+              <Camera className="w-5 h-5 mr-2" />
               Try SeeSense
-            </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-primary/30 hover:bg-primary/10 hover:border-primary">
-              Join as Early Tester
             </Button>
           </div>
         </div>
