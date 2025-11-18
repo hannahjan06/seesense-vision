@@ -21,43 +21,64 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,hsl(180,70%,50%,0.1),transparent_50%)]" />
+      <section className="relative overflow-hidden bg-gradient-to-br from-secondary/30 via-background to-background">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(180,65%,45%,0.08),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,hsl(175,70%,50%,0.05),transparent_50%)]" />
         
-        <div className="relative container mx-auto px-6 py-20 lg:py-32">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8 animate-fade-in">
-              <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
-                AI Vision for the{" "}
-                <span className="text-primary">Visually Impaired</span>
-              </h1>
-              <p className="text-xl lg:text-2xl text-muted-foreground">
-                See the world through AI. Describe scenes, read text, and identify objects — instantly.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground shadow-[0_0_30px_hsl(180,70%,50%,0.3)] hover:shadow-[0_0_40px_hsl(180,70%,50%,0.5)] transition-all">
-                  Try SeeSense Demo
-                </Button>
-                <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-primary/30 hover:bg-primary/10 hover:border-primary">
-                  How It Works
-                </Button>
-              </div>
+        <div className="relative container mx-auto px-6 py-16 lg:py-24">
+          <div className="max-w-5xl mx-auto text-center space-y-8 animate-fade-in">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-medium">
+              <Zap className="w-4 h-4" />
+              <span>AI-Powered Accessibility</span>
             </div>
             
-            <div className="animate-slide-up">
-              <img 
-                src={heroImage} 
-                alt="SeeSense interface showing AI-powered scene description on a smartphone" 
-                className="rounded-2xl shadow-2xl shadow-primary/20"
-              />
+            <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
+              AI Vision for the{" "}
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                Visually Impaired
+              </span>
+            </h1>
+            
+            <p className="text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto">
+              See the world through AI. Describe scenes, read text, and identify objects — instantly and independently.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+              <Button size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all">
+                <Camera className="w-5 h-5 mr-2" />
+                Try SeeSense Demo
+              </Button>
+              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-2 border-primary/30 hover:bg-primary/5 hover:border-primary">
+                How It Works
+              </Button>
+            </div>
+
+            {/* Hero Image */}
+            <div className="pt-12 animate-slide-up">
+              <div className="relative max-w-4xl mx-auto">
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
+                <img 
+                  src={heroImage} 
+                  alt="SeeSense interface showing AI-powered scene description on a smartphone" 
+                  className="rounded-2xl shadow-2xl w-full border border-border"
+                />
+                {/* Floating feature badges */}
+                <div className="absolute -left-4 top-1/4 hidden lg:flex items-center gap-2 bg-card border border-border rounded-lg px-4 py-3 shadow-lg animate-fade-in">
+                  <FileText className="w-5 h-5 text-primary" />
+                  <span className="font-medium text-sm">Text Reader</span>
+                </div>
+                <div className="absolute -right-4 top-1/2 hidden lg:flex items-center gap-2 bg-card border border-border rounded-lg px-4 py-3 shadow-lg animate-fade-in">
+                  <ScanLine className="w-5 h-5 text-primary" />
+                  <span className="font-medium text-sm">Object ID</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Problem Section */}
-      <section className="py-20 bg-secondary/50">
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16">
             285 Million People Struggle with Visual Information{" "}
@@ -126,7 +147,7 @@ const Index = () => {
       </section>
 
       {/* Demo Section */}
-      <section className="py-20 bg-secondary/50">
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
             Try the <span className="text-primary">SeeSense Experience</span>
@@ -186,7 +207,7 @@ const Index = () => {
       </section>
 
       {/* Impact Section */}
-      <section className="py-20 bg-secondary/50">
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16">
             Designed for Real-World{" "}
@@ -237,7 +258,7 @@ const Index = () => {
       </section>
 
       {/* Accessibility Features */}
-      <section className="py-20 bg-secondary/50">
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16">
             Built with <span className="text-primary">Accessibility First</span>
@@ -288,7 +309,7 @@ const Index = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-gradient-to-b from-secondary/50 to-background">
+      <section className="py-20 bg-gradient-to-b from-muted/30 to-background">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
             Help Us Build the Future of{" "}
