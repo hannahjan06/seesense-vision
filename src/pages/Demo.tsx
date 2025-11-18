@@ -9,7 +9,7 @@ const Demo = () => {
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
       <header className="border-b border-border">
-        <div className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-8 lg:px-16 py-4">
           <Button 
             variant="ghost" 
             onClick={() => navigate("/")}
@@ -23,7 +23,7 @@ const Demo = () => {
 
       {/* Demo Section */}
       <section className="py-20">
-        <div className="container mx-auto px-6 text-center">
+        <div className="container mx-auto px-8 lg:px-16 text-center">
           <h1 className="text-4xl lg:text-6xl font-bold mb-6">
             Try the <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">SeeSense Experience</span>
           </h1>
@@ -59,7 +59,7 @@ const Demo = () => {
 
       {/* Quick Features */}
       <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-8 lg:px-16">
           <h2 className="text-3xl font-bold text-center mb-12">
             What You'll Experience
           </h2>

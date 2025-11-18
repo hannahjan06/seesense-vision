@@ -15,7 +15,8 @@ import {
   CheckCircle
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import heroImage from "@/assets/hero-abstract.jpg";
+import InteractiveBackground from "@/components/InteractiveBackground";
+
 
 const Index = () => {
   const navigate = useNavigate();
@@ -23,11 +24,12 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-secondary/30 via-background to-background">
+      <section className="relative overflow-hidden bg-gradient-to-br from-secondary/30 via-background to-background min-h-[90vh] flex items-center">
+        <InteractiveBackground />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(180,65%,45%,0.08),transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,hsl(175,70%,50%,0.05),transparent_50%)]" />
         
-        <div className="relative container mx-auto px-6 py-16 lg:py-24">
+        <div className="relative container mx-auto px-8 lg:px-16 py-16 lg:py-24">
           <div className="max-w-5xl mx-auto text-center space-y-8 animate-fade-in">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-medium">
               <Zap className="w-4 h-4" />
@@ -55,24 +57,14 @@ const Index = () => {
                 Try SeeSense Demo
               </Button>
             </div>
-
-            {/* Hero Illustration */}
-            <div className="pt-12 animate-slide-up">
-              <div className="relative max-w-4xl mx-auto">
-                <img 
-                  src={heroImage} 
-                  alt="Abstract illustration of AI-powered vision and accessibility technology" 
-                  className="rounded-2xl w-full"
-                />
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
+
       {/* Problem Section */}
       <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-8 lg:px-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16">
             285 Million People Struggle with Visual Information{" "}
             <span className="text-primary">Every Day</span>
@@ -98,7 +90,7 @@ const Index = () => {
 
       {/* Solution Section */}
       <section className="py-20">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-8 lg:px-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-center mb-4">
             SeeSense Gives Instant,{" "}
             <span className="text-primary">Affordable Accessibility</span>
@@ -141,7 +133,7 @@ const Index = () => {
 
       {/* How It Works */}
       <section className="py-20">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-8 lg:px-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16">
             How It <span className="text-primary">Works</span>
           </h2>
@@ -174,7 +166,7 @@ const Index = () => {
 
       {/* Impact Section */}
       <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-8 lg:px-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16">
             Designed for Real-World{" "}
             <span className="text-primary">Independence</span>
@@ -199,7 +191,7 @@ const Index = () => {
 
       {/* Who It Helps */}
       <section className="py-20">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-8 lg:px-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16">
             Who It <span className="text-primary">Helps</span>
           </h2>
@@ -225,7 +217,7 @@ const Index = () => {
 
       {/* Accessibility Features */}
       <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-8 lg:px-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16">
             Built with <span className="text-primary">Accessibility First</span>
           </h2>
@@ -250,7 +242,7 @@ const Index = () => {
 
       {/* Final CTA */}
       <section className="py-20 bg-gradient-to-b from-muted/30 to-background">
-        <div className="container mx-auto px-6 text-center">
+        <div className="container mx-auto px-8 lg:px-16 text-center">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
             Help Us Build the Future of{" "}
             <span className="text-primary">AI Accessibility</span>
@@ -274,7 +266,7 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="border-t border-border py-12">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-8 lg:px-16">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex gap-8 text-sm text-muted-foreground">
               <a href="#about" className="hover:text-primary transition-colors">About</a>
