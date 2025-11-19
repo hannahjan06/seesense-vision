@@ -1,73 +1,175 @@
-# Welcome to your Lovable project
+# SeeSense — AI Vision Assistant for the Blind and Low-Vision Community
 
-## Project info
+## Overview
 
-**URL**: https://lovable.dev/projects/0cad906b-65b7-45e6-ae34-6da65e8bea4e
+SeeSense is a browser-based, voice-controlled AI assistant designed to help blind and low-vision users understand their surroundings using only a laptop or phone camera.
+Unlike typical computer vision tools, SeeSense is built with an accessibility-first approach: the user never needs to rely on sight, click tiny buttons, or manually crop images.
+The experience is entirely guided through speech and audio feedback.
 
-## How can I edit this code?
+SeeSense allows users to:
 
-There are several ways of editing your application.
+* Describe their environment
+* Read text from physical objects (menus, signs, labels, documents)
+* Identify objects in view
+* Operate the application hands-free through voice commands
 
-**Use Lovable**
+This project was built for Horizon Hacks 2025 under the theme: **AI for Accessibility and Equity**.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/0cad906b-65b7-45e6-ae34-6da65e8bea4e) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## Problem Statement
 
-**Use your preferred IDE**
+285 million people worldwide live with visual impairments. Everyday tasks such as reading a restaurant menu, identifying medication, or simply understanding what is around them often require the assistance of another person.
+Most technologies built for blind users are expensive, require special hardware, or are not intuitive for people with limited technical experience.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+There is a clear need for:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+* A low-cost solution
+* That runs entirely on existing devices
+* Without requiring installation
+* With a simple, voice-first interaction model
+* And reliable AI scene understanding
 
-Follow these steps:
+SeeSense addresses all of these needs in a single web application.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## What SeeSense Does
 
-# Step 3: Install the necessary dependencies.
-npm i
+**1. Scene Description**
+Users point their device in any direction. When they say “Describe,” SeeSense captures the current frame and explains the environment in clear, structured language.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+**2. Text Reading**
+Users say “Read text,” and the system extracts and speaks aloud any printed text visible in the camera frame, including menus, signs, product labels, or documents.
 
-**Edit a file directly in GitHub**
+**3. Object Identification**
+Users say “Identify object,” and SeeSense names the primary object in view and provides any relevant details such as color, size, shape, or printed information.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+**4. Voice-First Interaction**
+The user never needs to press a button.
+The system continuously listens for simple commands:
 
-**Use GitHub Codespaces**
+* “Describe”
+* “Read text”
+* “Identify object”
+* “Stop”
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Everything is spoken aloud automatically.
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## Key Features
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+* Voice-controlled, hands-free operation
+* High-contrast, minimal interface for accessibility
+* AI-generated scene descriptions using vision models
+* AI-powered text extraction and speech output
+* Works directly in the browser
+* No installation required
+* Keyboard shortcuts for low-vision users
+* Designed to be used by non-technical audiences
 
-## How can I deploy this project?
+---
 
-Simply open [Lovable](https://lovable.dev/projects/0cad906b-65b7-45e6-ae34-6da65e8bea4e) and click on Share -> Publish.
+## How It Works
 
-## Can I connect a custom domain to my Lovable project?
+1. The browser’s `getUserMedia` API provides a live camera feed.
+2. When the user gives a voice command, the system captures a single frame.
+3. The image is sent to an AI vision model for analysis.
+4. The response is spoken aloud using the Web Speech API.
+5. A text transcript is displayed for sighted helpers and judges.
 
-Yes, you can!
+Unlike real-time video analysis, SeeSense processes only one frame at a time to optimize speed, cost, and accessibility.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## Why This Matters
+
+Blind and low-vision individuals often rely on expensive or specialized devices. SeeSense demonstrates that meaningful accessibility tools can be built with everyday technology that users already own.
+It promotes independence, dignity, and equal access to information by leveraging AI in a responsible, user-centered way.
+
+---
+
+## Tech Stack
+
+**Frontend:**
+HTML, CSS, JavaScript
+Optional: React or any framework (not required)
+
+**AI:**
+Anthropic Claude Vision API (or any multi-modal LLM)
+OCR via AI model prompt
+Natural language generation via AI model
+
+**Browser APIs:**
+
+* Web Speech API (text-to-speech)
+* Web Speech Recognition (voice commands)
+* MediaDevices getUserMedia (camera access)
+
+**Hosting:**
+Netlify / Vercel / GitHub Pages
+
+---
+
+## How to Use
+
+1. Open the SeeSense web page.
+2. Allow camera and microphone permissions.
+3. Wait for the system to speak the welcome message.
+4. Use your voice to say:
+
+   * “Describe”
+   * “Read text”
+   * “Identify object”
+5. The system captures the current frame and speaks the results aloud.
+6. Say “Stop” to interrupt reading at any time.
+
+A fallback set of large, high-contrast buttons is available for sighted helpers.
+
+---
+
+## Accessibility Design Choices
+
+SeeSense is intentionally built to be usable without sight:
+
+* Voice-first interaction
+* Automatic audio narration
+* No visual menus or complex UI
+* High-contrast design for low-vision users
+* Large interaction targets
+* Minimal cognitive load
+* Clean single-page interface
+* No multi-step workflows or modal popups
+
+Every design decision was guided by the question:
+“Can this be used fully without looking at the screen?”
+
+---
+
+## Limitations
+
+* Not intended as a medical device
+* Works best in good lighting
+* Not a replacement for human assistance in critical situations
+* Internet connection required
+* Real-time continuous video analysis is not supported for cost and performance reasons
+
+---
+
+## Future Improvements
+
+* Mobile app version for faster processing
+* Real-time edge-based scene understanding
+* Continuous guidance mode
+* Navigation assistance with spatial audio
+* Offline on-device vision models
+* Integration with wearables
+* Specialized modes for medication scanning and object tracking
+
+---
+
+## Team
+
+Built by Hannah Janawa
+Track: Assistive Technology / Accessibility
