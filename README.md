@@ -15,7 +15,6 @@ SeeSense allows users to:
 
 This project was built for Horizon Hacks 2025 under the theme: **AI for Accessibility and Equity**.
 
----
 
 ## Problem Statement
 
@@ -31,8 +30,6 @@ There is a clear need for:
 * And reliable AI scene understanding
 
 SeeSense addresses all of these needs in a single web application.
-
----
 
 ## What SeeSense Does
 
@@ -56,8 +53,6 @@ The system continuously listens for simple commands:
 
 Everything is spoken aloud automatically.
 
----
-
 ## Key Features
 
 * Voice-controlled, hands-free operation
@@ -69,8 +64,6 @@ Everything is spoken aloud automatically.
 * Keyboard shortcuts for low-vision users
 * Designed to be used by non-technical audiences
 
----
-
 ## How It Works
 
 1. The browser’s `getUserMedia` API provides a live camera feed.
@@ -81,14 +74,10 @@ Everything is spoken aloud automatically.
 
 Unlike real-time video analysis, SeeSense processes only one frame at a time to optimize speed, cost, and accessibility.
 
----
-
 ## Why This Matters
 
 Blind and low-vision individuals often rely on expensive or specialized devices. SeeSense demonstrates that meaningful accessibility tools can be built with everyday technology that users already own.
 It promotes independence, dignity, and equal access to information by leveraging AI in a responsible, user-centered way.
-
----
 
 ## Tech Stack
 
@@ -110,8 +99,6 @@ Natural language generation via AI model
 **Hosting:**
 Netlify / Vercel / GitHub Pages
 
----
-
 ## How to Use
 
 1. Open the SeeSense web page.
@@ -126,8 +113,6 @@ Netlify / Vercel / GitHub Pages
 6. Say “Stop” to interrupt reading at any time.
 
 A fallback set of large, high-contrast buttons is available for sighted helpers.
-
----
 
 ## Accessibility Design Choices
 
@@ -145,8 +130,6 @@ SeeSense is intentionally built to be usable without sight:
 Every design decision was guided by the question:
 “Can this be used fully without looking at the screen?”
 
----
-
 ## Limitations
 
 * Not intended as a medical device
@@ -154,8 +137,6 @@ Every design decision was guided by the question:
 * Not a replacement for human assistance in critical situations
 * Internet connection required
 * Real-time continuous video analysis is not supported for cost and performance reasons
-
----
 
 ## Future Improvements
 
@@ -166,8 +147,6 @@ Every design decision was guided by the question:
 * Offline on-device vision models
 * Integration with wearables
 * Specialized modes for medication scanning and object tracking
-
----
 
 ## Team
 
